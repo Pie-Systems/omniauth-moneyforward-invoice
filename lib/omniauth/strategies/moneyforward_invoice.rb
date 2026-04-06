@@ -1,12 +1,14 @@
+require 'omniauth-oauth2'
+
 OmniAuth.config.add_camelization('moneyforward_invoice', 'MoneyForwardInvoice')
 
 module OmniAuth
   module Strategies
     class MoneyForwardInvoice < OmniAuth::Strategies::OAuth2
       option :client_options,
-             site: 'https://invoice.moneyforward.com',
-             authorize_url: '/oauth/authorize',
-             token_url: '/oauth/token'
+             site: 'https://api.biz.moneyforward.com',
+             authorize_url: '/authorize',
+             token_url: '/token'
 
       option :name, 'moneyforward_invoice'
 
